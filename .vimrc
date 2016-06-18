@@ -126,6 +126,7 @@ inoremap <c-u> <esc>e<space>\i
 " escape in insert mode
 "inoremap jk <esc>
 "inoremap <esc> <nop>
+inoremap <tab> <esc>
 
 " edit my .vimrc file
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -141,12 +142,12 @@ iabbrev ccopy Copyright 2013 James CHEN, all rights reserved.
 
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 " vundle配置===============================================================
-set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible			   " be iMproved
+filetype off				   " required!
  
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-     
+	 
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
@@ -165,17 +166,17 @@ Bundle 'FuzzyFinder'
 Bundle 'ctrlp.vim'
 " ...
   
-filetype plugin indent on     " required!
-    "
-    " Brief help  -- 此处后面都是vundle的使用命令
-    " :BundleList          - list configured bundles
-    " :BundleInstall(!)    - install(update) bundles
-    " :BundleSearch(!) foo - search(or refresh cache first) for foo
-    " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-    "
-    " see :h vundle for more details or wiki for FAQ
-    " NOTE: comments after Bundle command are not allowed..
-    "=========================================================================
+filetype plugin indent on	  " required!
+	"
+	" Brief help  -- 此处后面都是vundle的使用命令
+	" :BundleList		   - list configured bundles
+	" :BundleInstall(!)    - install(update) bundles
+	" :BundleSearch(!) foo - search(or refresh cache first) for foo
+	" :BundleClean(!)	   - confirm(or auto-approve) removal of unused bundles
+	"
+	" see :h vundle for more details or wiki for FAQ
+	" NOTE: comments after Bundle command are not allowed..
+	"=========================================================================
 
 
 " vim-powerline Download
@@ -212,7 +213,7 @@ Bundle 'https://github.com/nathanaelkane/vim-indent-guides.git'
 
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1 
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd	guibg=red	ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 hi IndentGuidesOdd guibg=red ctermbg=3
 hi IndentGuidesEven guibg=green ctermbg=4
@@ -236,23 +237,23 @@ let g:ycm_warning_symbol = '>*'
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gi :YcmCompleter GoToImprecise<CR>
 nmap <F4> :YcmDiags<CR>
 let g:ycm_extra_conf_vim_data = ['&filetype']
-"let g:ycm_extra_conf_vim_data = []
 let g:ycm_auto_trigger = 1
-let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.'],
-  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
-  \             're!\[.*\]\s'],
-  \   'ocaml' : ['.', '#'],
-  \   'cpp,objcpp' : ['->', '.', '::'],
-  \   'perl' : ['->'],
-  \   'php' : ['->', '::'],
-  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-  \   'ruby' : ['.', '::'],
-  \   'lua' : ['.', ':'],
-  \   'erlang' : [':'],
-  \ }
+"let g:ycm_semantic_triggers =	{
+"  \   'c' : ['->', '.'],
+"  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
+"  \			 're!\[.*\]\s'],
+"  \   'ocaml' : ['.', '#'],
+"  \   'cpp,objcpp' : ['->', '.', '::'],
+"  \   'perl' : ['->'],
+"  \   'php' : ['->', '::'],
+"  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+"  \   'ruby' : ['.', '::'],
+"  \   'lua' : ['.', ':'],
+"  \   'erlang' : [':'],
+"  \ }
 
 " 配置ctags路径
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
